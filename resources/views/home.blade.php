@@ -59,7 +59,7 @@
                     </div>
                 @endforeach
                 @else
-                <div class="alert alert-warning">No hay videos actualmente</div>
+                <div class="alert alert-warning">No hay videos actualmente update</div>
                 @endif
             </div>
         </div>
