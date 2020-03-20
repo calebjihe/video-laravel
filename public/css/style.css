@@ -22,3 +22,7 @@ body {}
 .video-title a {
     color: #444;
 }
+
+.btn-filter {
+    margin-top: 5px;
+}

@@ -34,7 +34,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 //Rutas del controllador  de Videos 
 Route::get('crear-video', array(
@@ -77,7 +77,7 @@ Route::post('update-video/{video_id}', array(
     'uses'=>'VideoController@update'
 ));
 
-Route::get('/buscar/{search?}',[
+Route::get('/buscar/{search?}/{filter?}',[
     'as'=>'videoSearch',
     'uses'=>'VideoController@search'
 ]);
@@ -94,3 +94,12 @@ Route::get('/delete-comment/{comment_id}',array(
     'uses'=> 'CommentController@delete'
 ));
 
+//usuarios
+Route::get('/canal/{user_id}',array(
+    'as'=>'channel',
+    'uses'=> 'UserController@channel'
+));
+//cache
+Route::get('/clear-cache',function (){
+    $code=Artisan::call('cache:clear');
+});
